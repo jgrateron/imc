@@ -48,14 +48,13 @@ public class App extends JFrame {
 
 	private void calcularImc() {
 		try {
-			double estatura = panelImc.getEstatura();
-			double peso = panelImc.getPeso();
-			double imc = peso / (estatura * estatura);
+			var estatura = panelImc.getEstatura();
+			var peso = panelImc.getPeso();
+			var imc = peso / (estatura * estatura);
 			var dImc = new DImc(this, imc);
 			dImc.setVisible(true);
 		} catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(this, e.getMessage(), getTitle(), JOptionPane.WARNING_MESSAGE);
-			return;
 		}
 	}
 
